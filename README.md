@@ -1,9 +1,9 @@
-# WezTerm Cyber Cyan — セットアップガイド
+# Windowsでモテるターミナル
+
+Windows向けのSF・サイバーパンク風WezTermテーマです。
 
 ![preview](docs/example.png)
 
-
-Windows向けのSF・サイバーパンク風WezTermテーマです。シアン系カラーとAcrylicブラー、カスタムタブ表示を組み合わせたデザインになっています。
 
 ---
 
