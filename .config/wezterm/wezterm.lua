@@ -15,7 +15,7 @@ config.font = wezterm.font_with_fallback({
 })
 
 -- ── ウィンドウ ─────────────────────────────
-config.window_background_opacity = 0.5  -- 透過強め（blurが見える）
+config.window_background_opacity = 0.7  -- 透過強め（blurが見える）
 config.win32_system_backdrop = 'Acrylic' -- Windows11のblur
 config.window_decorations = "INTEGRATED_BUTTONS | RESIZE"
 config.window_padding = { left = 14, right = 14, top = 10, bottom = 8 }
@@ -138,6 +138,18 @@ config.keys = {
   { key = 'RightArrow', mods = 'ALT', action = wezterm.action.ActivatePaneDirection 'Right' },
   { key = 'UpArrow',    mods = 'ALT', action = wezterm.action.ActivatePaneDirection 'Up'    },
   { key = 'DownArrow',  mods = 'ALT', action = wezterm.action.ActivatePaneDirection 'Down'  },
+    -- Ctrl+C / Ctrl+V でコピペ
+  { key = 'c', mods = 'CTRL', action = wezterm.action.CopyTo 'Clipboard' },
+  { key = 'v', mods = 'CTRL', action = wezterm.action.PasteFrom 'Clipboard' },
+}
+
+config.mouse_bindings = {
+  -- 右クリックでペースト
+  {
+    event = { Down = { streak = 1, button = 'Right' } },
+    mods = 'NONE',
+    action = wezterm.action.PasteFrom 'Clipboard',
+  },
 }
 
 -- ── デフォルトシェル（Windows） ────────────
